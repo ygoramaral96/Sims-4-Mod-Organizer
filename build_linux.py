@@ -26,7 +26,7 @@ def build_linux():
     try:
         subprocess.run(cmd, check=True)
         print("\n" + "=" * 60)
-        print("✓ Build successful!")
+        print("[SUCCESS] Build successful!")
         print("=" * 60)
         print(f"\nBinary location: dist/sims4-mod-organizer")
         print("\nMake it executable:")
@@ -34,10 +34,10 @@ def build_linux():
         print("\nYou can distribute this binary to Linux users.")
         
     except subprocess.CalledProcessError as e:
-        print(f"\n✗ Build failed: {e}")
+        print(f"\n[ERROR] Build failed: {e}")
         sys.exit(1)
     except FileNotFoundError:
-        print("\n✗ PyInstaller not found!")
+        print("\n[ERROR] PyInstaller not found!")
         print("Install it with: pip install pyinstaller")
         sys.exit(1)
 

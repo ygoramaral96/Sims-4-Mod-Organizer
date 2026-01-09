@@ -33,17 +33,17 @@ def build_mac():
     try:
         subprocess.run(cmd, check=True)
         print("\n" + "=" * 60)
-        print("✓ Build successful!")
+        print("[SUCCESS] Build successful!")
         print("=" * 60)
         print(f"\nApp bundle location: dist/Sims4ModOrganizer.app")
         print("\nYou can distribute this .app to macOS users.")
-        print("Note: Users may need to right-click → Open to bypass Gatekeeper")
+        print("Note: Users may need to right-click -> Open to bypass Gatekeeper")
         
     except subprocess.CalledProcessError as e:
-        print(f"\n✗ Build failed: {e}")
+        print(f"\n[ERROR] Build failed: {e}")
         sys.exit(1)
     except FileNotFoundError:
-        print("\n✗ PyInstaller not found!")
+        print("\n[ERROR] PyInstaller not found!")
         print("Install it with: pip install pyinstaller")
         sys.exit(1)
 
