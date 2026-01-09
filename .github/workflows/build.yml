@@ -9,6 +9,10 @@ on:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
+permissions:
+  contents: write  # Required to create releases
+  packages: write
+
 jobs:
   build-windows:
     name: Build Windows
@@ -106,9 +110,9 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            Sims4ModOrganizer-Windows/*
-            Sims4ModOrganizer-macOS/*
-            Sims4ModOrganizer-Linux/*
+            Sims4ModOrganizer-Windows/Sims4ModOrganizer.exe
+            Sims4ModOrganizer-macOS/Sims4ModOrganizer.app/**/*
+            Sims4ModOrganizer-Linux/sims4-mod-organizer
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
