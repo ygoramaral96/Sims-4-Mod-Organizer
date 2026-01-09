@@ -1,0 +1,3 @@
+pyinstaller
+# Standard library used for Tkinter, no install needed typically on Windows/Mac
+# On Linux tkinter might need apt-get install python3-tk
